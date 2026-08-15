@@ -1,7 +1,7 @@
 <!-- HEADER & NAVIGATION -->
 <header class="header-glass">
   <div class="container-custom header-container">
-    <a href="#" class="logo-brand">
+    <a routerLink="/" (click)="closeMobileMenu()" class="logo-brand">
       <div class="logo-icon">
         <i class="fa-solid fa-crown"></i>
       </div>
@@ -11,14 +11,15 @@
       </div>
     </a>
 
-    <!-- Desktop Navigation Links -->
+    <!-- Desktop Navigation Links with Angular Router -->
     <nav class="nav-menu-desktop">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#properties" class="nav-link">Properties to Rent</a>
-      <a href="#pre-approval" class="nav-link">Get Pre-Approved</a>
-      <a href="#contact" class="nav-link">Contact Us</a>
-      <a href="#pre-approval" class="btn-gold">Pre-Approve Now</a>
+      <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+      <a routerLink="/about" routerLinkActive="active-nav-link" class="nav-link">About</a>
+      <a routerLink="/services" routerLinkActive="active-nav-link" class="nav-link">Services</a>
+      <a routerLink="/properties" routerLinkActive="active-nav-link" class="nav-link">Properties to Rent</a>
+      <a routerLink="/pre-approval" routerLinkActive="active-nav-link" class="nav-link">Get Pre-Approved</a>
+      <a routerLink="/contact" routerLinkActive="active-nav-link" class="nav-link">Contact Us</a>
+      <a routerLink="/pre-approval" class="btn-gold nav-cta">Pre-Approve Now</a>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -29,624 +30,90 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" *ngIf="isMobileMenuOpen">
-    <a href="#about" class="mobile-nav-link" (click)="toggleMobileMenu()">About</a>
-    <a href="#services" class="mobile-nav-link" (click)="toggleMobileMenu()">Services</a>
-    <a href="#properties" class="mobile-nav-link" (click)="toggleMobileMenu()">Properties to Rent</a>
-    <a href="#pre-approval" class="mobile-nav-link" (click)="toggleMobileMenu()">Get Pre-Approved</a>
-    <a href="#contact" class="mobile-nav-link" (click)="toggleMobileMenu()">Contact Us</a>
-    <a href="#pre-approval" class="btn-gold" (click)="toggleMobileMenu()">Pre-Approve Now</a>
+    <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}" class="mobile-nav-link" (click)="closeMobileMenu()">Home</a>
+    <a routerLink="/about" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">About</a>
+    <a routerLink="/services" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Services</a>
+    <a routerLink="/properties" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Properties to Rent</a>
+    <a routerLink="/pre-approval" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Get Pre-Approved</a>
+    <a routerLink="/contact" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Contact Us</a>
+    <a routerLink="/pre-approval" class="btn-gold mobile-btn" (click)="closeMobileMenu()">Pre-Approve Now</a>
   </div>
 </header>
 
-<main>
-  <!-- HERO SECTION -->
-  <section class="hero-section" id="home">
-    <div class="container-custom hero-content">
-      <div class="gold-badge">
-        <i class="fa-solid fa-gem"></i> Premier Property Management
-      </div>
-      
-      <h1 class="hero-title">
-        Elevating Luxury Living & <br>
-        <span class="text-gold-gradient">Real Estate Excellence</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        South Africa’s leading property management firm. We represent prestigious tenants, buyers, and high-yield investors across Johannesburg, Sandton, Rosebank, and Midrand.
-      </p>
-
-      <!-- Quick Search Card -->
-      <div class="search-card">
-        <div class="search-grid">
-          <div class="field-group">
-            <label class="field-label">Location</label>
-            <select class="select-control" [(ngModel)]="searchLocation">
-              <option value="All Locations">All Locations</option>
-              <option value="Sandton">Sandton Central</option>
-              <option value="Rosebank">Rosebank</option>
-              <option value="Waterfall">Waterfall Estate</option>
-              <option value="Houghton">Houghton Estate</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label">Property Type</label>
-            <select class="select-control" [(ngModel)]="searchType">
-              <option value="All Types">All Types</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Villa">Villa / Estate</option>
-              <option value="Penthouse">Sky Penthouse</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label">Monthly Rental Range</label>
-            <select class="select-control" [(ngModel)]="searchPriceRange">
-              <option value="All Prices">All Prices</option>
-              <option value="< R30k">Under R30,000 /pm</option>
-              <option value="R30k - R50k">R30,000 - R50,000 /pm</option>
-              <option value="> R50k">Over R50,000 /pm</option>
-            </select>
-          </div>
-
-          <button class="btn-gold">
-            <i class="fa-solid fa-magnifying-glass"></i> Search Properties
-          </button>
-        </div>
-      </div>
-
-      <!-- Stats Bar -->
-      <div class="stats-bar">
-        <div class="stat-item">
-          <span class="stat-number">R2.5B+</span>
-          <span class="stat-label">Portfolio Value</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">1,200+</span>
-          <span class="stat-label">Luxury Units Managed</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">99.4%</span>
-          <span class="stat-label">Occupancy Rate</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">15+ Yrs</span>
-          <span class="stat-label">Market Authority</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT US SECTION -->
-  <section class="section-padding about-section" id="about">
-    <div class="container-custom">
-      <div class="about-grid">
-        <div class="about-image-wrap">
-          <img src="assets/images/hero_mansion.png" alt="Empire Living Estate" class="about-img">
-          <div class="about-experience-badge">
-            <span class="exp-num">15</span>
-            <div class="exp-text">
-              Years Of Unmatched<br>Excellence
-            </div>
-          </div>
-        </div>
-
-        <div class="about-text-content">
-          <div class="gold-badge">
-            <i class="fa-solid fa-shield-halved"></i> About Empire Living
-          </div>
-
-          <h2 class="section-title">
-            Redefining High-End Property Management
-          </h2>
-
-          <p class="about-paragraph">
-            Empire Living is one of the region’s premier Property Management & Real Estate advisory companies. Our dedicated team of professional specialists represent buyers, sellers, and corporate tenants with an in-depth understanding of local luxury property nuances.
-          </p>
-
-          <p class="about-paragraph">
-            We bridge the gap between discerning property owners seeking maximised yields and elite corporate tenants demanding world-class residence standards.
-          </p>
-
-          <div class="pillar-list">
-            <div class="pillar-item">
-              <div class="pillar-icon">
-                <i class="fa-solid fa-user-shield"></i>
-              </div>
-              <div>
-                <h4 class="pillar-title">Vetted Tenant Placement</h4>
-                <p class="pillar-desc">Comprehensive financial background & credit verifications.</p>
-              </div>
-            </div>
-
-            <div class="pillar-item">
-              <div class="pillar-icon">
-                <i class="fa-solid fa-chart-line"></i>
-              </div>
-              <div>
-                <h4 class="pillar-title">Yield Optimization</h4>
-                <p class="pillar-desc">Strategic rental valuations and portfolio growth advisory.</p>
-              </div>
-            </div>
-
-            <div class="pillar-item">
-              <div class="pillar-icon">
-                <i class="fa-solid fa-building-circle-check"></i>
-              </div>
-              <div>
-                <h4 class="pillar-title">Concierge Maintenance</h4>
-                <p class="pillar-desc">24/7 dedicated property care and asset preservation.</p>
-              </div>
-            </div>
-
-            <div class="pillar-item">
-              <div class="pillar-icon">
-                <i class="fa-solid fa-file-contract"></i>
-              </div>
-              <div>
-                <h4 class="pillar-title">Seamless Compliance</h4>
-                <p class="pillar-desc">Rigorous legal, lease, and regulatory management.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section class="section-padding services-section" id="services">
-    <div class="container-custom">
-      <div class="section-header">
-        <div class="gold-badge">
-          <i class="fa-solid fa-award"></i> Bespoke Solutions
-        </div>
-        <h2 class="section-title">Exclusive Real Estate Services</h2>
-        <p class="section-subtitle">
-          End-to-end real estate expertise tailored for high-net-worth property owners, tenants, and investors.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="glass-card service-card">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-city"></i>
-          </div>
-          <h3 class="service-card-title">Full Property Management</h3>
-          <p class="service-card-desc">
-            Complete management of luxury residences, rent collections, routine inspections, and emergency repairs for hassle-free ownership.
-          </p>
-        </div>
-
-        <div class="glass-card service-card">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-key"></i>
-          </div>
-          <h3 class="service-card-title">Tenant Leasing & Vetting</h3>
-          <p class="service-card-desc">
-            Targeted marketing, professional photography, rigorous credit checks, and lease executions for high-caliber corporate tenants.
-          </p>
-        </div>
-
-        <div class="glass-card service-card">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <h3 class="service-card-title">Sales & Acquisitions</h3>
-          <p class="service-card-desc">
-            Private placement and representation for prime residential estates, penthouses, and high-yield commercial investments.
-          </p>
-        </div>
-
-        <div class="glass-card service-card">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-calculator"></i>
-          </div>
-          <h3 class="service-card-title">Get Pre-Approved</h3>
-          <p class="service-card-desc">
-            Direct bond originations, pre-qualification assessment, and financial advisory to secure optimal home loan financing.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROPERTIES TO RENT SECTION -->
-  <section class="section-padding properties-section" id="properties">
-    <div class="container-custom">
-      <div class="section-header">
-        <div class="gold-badge">
-          <i class="fa-solid fa-house-flag"></i> Prime Portfolio
-        </div>
-        <h2 class="section-title">Properties Available To Rent</h2>
-        <p class="section-subtitle">
-          Explore our handpicked collection of executive suites, penthouses, and luxury villas across Gauteng's top suburbs.
-        </p>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="filter-tabs">
-        <button class="tab-btn" [class.active]="activeCategory === 'All'" (click)="setCategory('All')">All Residences</button>
-        <button class="tab-btn" [class.active]="activeCategory === 'Penthouse'" (click)="setCategory('Penthouse')">Sky Penthouses</button>
-        <button class="tab-btn" [class.active]="activeCategory === 'Villa'" (click)="setCategory('Villa')">Luxury Estates</button>
-        <button class="tab-btn" [class.active]="activeCategory === 'Apartment'" (click)="setCategory('Apartment')">Executive Suites</button>
-      </div>
-
-      <!-- Properties Grid -->
-      <div class="properties-grid">
-        <div class="glass-card property-card" *ngFor="let prop of filteredProperties">
-          <div class="property-img-wrapper">
-            <img [src]="prop.image" [alt]="prop.title" class="property-img">
-            <span class="property-badge">{{ prop.badge }}</span>
-            <span class="property-price-tag">R{{ prop.price | number }} <small style="font-size:0.75rem; font-weight:500;">/pm</small></span>
-          </div>
-
-          <div class="property-card-body">
-            <h3 class="property-card-title">{{ prop.title }}</h3>
-            
-            <div class="property-location">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>{{ prop.location }}</span>
-            </div>
-
-            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-              {{ prop.description }}
-            </p>
-
-            <div class="property-specs">
-              <div class="spec-item">
-                <i class="fa-solid fa-bed"></i> {{ prop.beds }} Beds
-              </div>
-              <div class="spec-item">
-                <i class="fa-solid fa-bath"></i> {{ prop.baths }} Baths
-              </div>
-              <div class="spec-item">
-                <i class="fa-solid fa-car"></i> {{ prop.garage }} Parking
-              </div>
-              <div class="spec-item">
-                <i class="fa-solid fa-ruler-combined"></i> {{ prop.areaSqM }} m²
-              </div>
-            </div>
-
-            <button class="btn-outline-gold" (click)="openViewingModal(prop)" style="width: 100%; margin-top: auto;">
-              <i class="fa-solid fa-calendar-check"></i> Request Viewing
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GET PRE-APPROVED SECTION -->
-  <section class="section-padding preapp-section" id="pre-approval">
-    <div class="container-custom">
-      <div class="section-header">
-        <div class="gold-badge">
-          <i class="fa-solid fa-file-signature"></i> Financial Advisory
-        </div>
-        <h2 class="section-title">Bond Pre-Approval & Estimator</h2>
-        <p class="section-subtitle">
-          Calculate your estimated home loan repayments and secure your instant pre-approval certificate with Empire Living.
-        </p>
-      </div>
-
-      <div class="preapp-grid">
-        <!-- Interactive Calculator -->
-        <div class="glass-card calculator-card">
-          <div class="calc-header">
-            <h3 class="calc-title">Interactive Repayment Estimator</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Adjust property value, deposit, and term parameters to see instant repayment estimates.</p>
-          </div>
-
-          <!-- Property Price Slider -->
-          <div class="slider-group">
-            <div class="slider-label-row">
-              <span>Property Purchase Price</span>
-              <span class="slider-val">R{{ calcPropertyPrice | number }}</span>
-            </div>
-            <input type="range" class="custom-range" min="1000000" max="15000000" step="100000" [(ngModel)]="calcPropertyPrice">
-          </div>
-
-          <!-- Deposit Amount Slider -->
-          <div class="slider-group">
-            <div class="slider-label-row">
-              <span>Cash Deposit Amount</span>
-              <span class="slider-val">R{{ calcDeposit | number }}</span>
-            </div>
-            <input type="range" class="custom-range" min="0" max="3000000" step="50000" [(ngModel)]="calcDeposit">
-          </div>
-
-          <!-- Loan Term Slider -->
-          <div class="slider-group">
-            <div class="slider-label-row">
-              <span>Repayment Period</span>
-              <span class="slider-val">{{ calcLoanYears }} Years</span>
-            </div>
-            <input type="range" class="custom-range" min="5" max="30" step="5" [(ngModel)]="calcLoanYears">
-          </div>
-
-          <!-- Interest Rate Slider -->
-          <div class="slider-group">
-            <div class="slider-label-row">
-              <span>Interest Rate (Prime + Margin)</span>
-              <span class="slider-val">{{ calcInterestRate }}%</span>
-            </div>
-            <input type="range" class="custom-range" min="7.0" max="15.0" step="0.25" [(ngModel)]="calcInterestRate">
-          </div>
-
-          <!-- Calculation Summary Box -->
-          <div class="calc-summary-box">
-            <div class="repayment-highlight">
-              <span style="font-size:0.85rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Estimated Monthly Repayment</span>
-              <span class="repayment-amount">R{{ monthlyRepayment | number }}</span>
-              <span style="font-size:0.8rem; color: var(--gold-light);">*Subject to bank qualification & credit scoring</span>
-            </div>
-
-            <div style="display: flex; justify-space-between; font-size:0.9rem; color: var(--text-muted);">
-              <span>Required Bond Loan Amount:</span>
-              <strong style="color: var(--text-white);">R{{ loanAmount | number }}</strong>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pre-Approval Application Form -->
-        <div class="glass-card form-card">
-          <h3 class="calc-title" style="margin-bottom:1rem;">Get Pre-Approved Instantly</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">
-            Fill in your basic details below to receive a formal pre-qualification evaluation from our bond origination team.
-          </p>
-
-          <form (submit)="submitPreAppForm()" *ngIf="!preAppForm.submitted">
-            <div class="field-group" style="margin-bottom: 1.25rem;">
-              <label class="field-label">Full Legal Name</label>
-              <input type="text" class="input-control" placeholder="e.g. Tshepo Sibiya" [(ngModel)]="preAppForm.fullName" name="fullName" required>
-            </div>
-
-            <div class="field-group" style="margin-bottom: 1.25rem;">
-              <label class="field-label">Email Address</label>
-              <input type="email" class="input-control" placeholder="name&#64;company.co.za" [(ngModel)]="preAppForm.email" name="email" required>
-            </div>
-
-            <div class="field-group" style="margin-bottom: 1.25rem;">
-              <label class="field-label">Contact Phone Number</label>
-              <input type="tel" class="input-control" placeholder="+27 82 123 4567" [(ngModel)]="preAppForm.phone" name="phone" required>
-            </div>
-
-            <div class="field-group" style="margin-bottom: 1.5rem;">
-              <label class="field-label">Gross Monthly Income (ZAR)</label>
-              <input type="number" class="input-control" [(ngModel)]="preAppForm.monthlyIncome" name="income" required>
-            </div>
-
-            <button type="submit" class="btn-gold" style="width: 100%;">
-              <i class="fa-solid fa-paper-plane"></i> Submit Pre-Approval Request
-            </button>
-          </form>
-
-          <div class="success-alert" *ngIf="preAppForm.submitted">
-            <i class="fa-solid fa-circle-check" style="font-size:2.5rem; margin-bottom:1rem;"></i>
-            <h4 style="font-size:1.25rem; font-weight:700; color:var(--text-white);">Application Received!</h4>
-            <p style="font-size:0.95rem; margin-top:0.5rem; color: var(--text-muted);">
-              Thank you {{ preAppForm.fullName }}. Our senior bond origination specialist will contact you within 2 business hours with your pre-qualification certificate.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT US SECTION -->
-  <section class="section-padding contact-section" id="contact">
-    <div class="container-custom">
-      <div class="section-header">
-        <div class="gold-badge">
-          <i class="fa-solid fa-headset"></i> Connect With Us
-        </div>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">
-          Whether you are looking to list a luxury property, request tenant placement, or schedule a viewing, our executive team is at your service.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Contact Info Column -->
-        <div class="contact-info-wrap">
-          <div class="glass-card" style="padding: 2rem;">
-            <div class="contact-card-item" style="margin-bottom: 1.75rem;">
-              <div class="contact-icon">
-                <i class="fa-solid fa-building-columns"></i>
-              </div>
-              <div>
-                <h4 class="contact-detail-title">Sandton Flagship Office</h4>
-                <p class="contact-detail-text">Empire Living House, Sandton Central, Johannesburg, South Africa</p>
-              </div>
-            </div>
-
-            <div class="contact-card-item" style="margin-bottom: 1.75rem;">
-              <div class="contact-icon">
-                <i class="fa-solid fa-phone-volume"></i>
-              </div>
-              <div>
-                <h4 class="contact-detail-title">Direct Telephone</h4>
-                <p class="contact-detail-text">+27 (0) 11 800 9000 / +27 (0) 82 000 1122</p>
-              </div>
-            </div>
-
-            <div class="contact-card-item" style="margin-bottom: 1.75rem;">
-              <div class="contact-icon">
-                <i class="fa-solid fa-envelope-open-text"></i>
-              </div>
-              <div>
-                <h4 class="contact-detail-title">Official Email</h4>
-                <p class="contact-detail-text">info&#64;empireliving.co.za / enquiries&#64;empireliving.co.za</p>
-              </div>
-            </div>
-
-            <div class="contact-card-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <div>
-                <h4 class="contact-detail-title">Business Operating Hours</h4>
-                <p class="contact-detail-text">Mon - Fri: 08:00 - 17:30 | Sat: 09:00 - 13:00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form Column -->
-        <div class="glass-card form-card">
-          <h3 class="calc-title" style="margin-bottom: 0.5rem;">Send Us A Direct Message</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.75rem;">Complete the form below for immediate assistance.</p>
-
-          <form (submit)="submitContactForm()" *ngIf="!contactForm.submitted">
-            <div class="field-group" style="margin-bottom: 1.25rem;">
-              <label class="field-label">Your Full Name</label>
-              <input type="text" class="input-control" placeholder="e.g. Sarah Jenkins" [(ngModel)]="contactForm.name" name="cName" required>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
-              <div class="field-group">
-                <label class="field-label">Email Address</label>
-                <input type="email" class="input-control" placeholder="name&#64;domain.com" [(ngModel)]="contactForm.email" name="cEmail" required>
-              </div>
-              <div class="field-group">
-                <label class="field-label">Phone Number</label>
-                <input type="tel" class="input-control" placeholder="+27 82 000 0000" [(ngModel)]="contactForm.phone" name="cPhone" required>
-              </div>
-            </div>
-
-            <div class="field-group" style="margin-bottom: 1.25rem;">
-              <label class="field-label">Primary Interest</label>
-              <select class="input-control" [(ngModel)]="contactForm.interest" name="cInterest">
-                <option value="Renting Luxury Property">Renting Luxury Property</option>
-                <option value="Property Management Services">Property Management Services</option>
-                <option value="Property Sales & Acquisitions">Property Sales & Acquisitions</option>
-                <option value="Bond Pre-Approval">Bond Pre-Approval</option>
-              </select>
-            </div>
-
-            <div class="field-group" style="margin-bottom: 1.5rem;">
-              <label class="field-label">Message / Enquiry Details</label>
-              <textarea class="input-control" placeholder="Provide details regarding your property request..." [(ngModel)]="contactForm.message" name="cMessage" required></textarea>
-            </div>
-
-            <button type="submit" class="btn-gold" style="width: 100%;">
-              <i class="fa-solid fa-paper-plane"></i> Send Enquiry
-            </button>
-          </form>
-
-          <div class="success-alert" *ngIf="contactForm.submitted">
-            <i class="fa-solid fa-circle-check" style="font-size:2.5rem; margin-bottom:1rem;"></i>
-            <h4 style="font-size:1.25rem; font-weight:700; color:var(--text-white);">Enquiry Sent Successfully!</h4>
-            <p style="font-size:0.95rem; margin-top:0.5rem; color: var(--text-muted);">
-              Thank you {{ contactForm.name }}. An Empire Living representative has received your message and will respond promptly.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- MAIN CONTENT ROUTER OUTLET -->
+<main class="main-content">
+  <router-outlet></router-outlet>
 </main>
 
-<!-- VIEWING REQUEST MODAL -->
-<div class="modal-overlay" *ngIf="selectedProperty">
-  <div class="glass-card modal-content">
-    <button class="modal-close-btn" (click)="closeViewingModal()">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <h3 class="calc-title" style="margin-bottom: 0.25rem;">Schedule Property Viewing</h3>
-    <p style="color: var(--gold-light); font-weight: 600; font-size: 0.95rem; margin-bottom: 1.5rem;">
-      {{ selectedProperty.title }} — R{{ selectedProperty.price | number }}/pm
-    </p>
-
-    <form (submit)="submitViewingForm()" *ngIf="!viewingForm.submitted">
-      <div class="field-group" style="margin-bottom: 1rem;">
-        <label class="field-label">Full Name</label>
-        <input type="text" class="input-control" placeholder="Your name" [(ngModel)]="viewingForm.name" name="vName" required>
-      </div>
-
-      <div class="field-group" style="margin-bottom: 1rem;">
-        <label class="field-label">Contact Mobile</label>
-        <input type="tel" class="input-control" placeholder="+27 82 000 0000" [(ngModel)]="viewingForm.phone" name="vPhone" required>
-      </div>
-
-      <div class="field-group" style="margin-bottom: 1rem;">
-        <label class="field-label">Preferred Date & Time</label>
-        <input type="datetime-local" class="input-control" [(ngModel)]="viewingForm.date" name="vDate" required>
-      </div>
-
-      <div class="field-group" style="margin-bottom: 1.5rem;">
-        <label class="field-label">Special Notes / Requirements</label>
-        <input type="text" class="input-control" placeholder="e.g. Prefer afternoon slot" [(ngModel)]="viewingForm.notes" name="vNotes">
-      </div>
-
-      <button type="submit" class="btn-gold" style="width: 100%;">
-        <i class="fa-solid fa-calendar-check"></i> Confirm Viewing Request
-      </button>
-    </form>
-
-    <div class="success-alert" *ngIf="viewingForm.submitted">
-      <i class="fa-solid fa-circle-check" style="font-size:2.5rem; margin-bottom:1rem;"></i>
-      <h4 style="font-size:1.25rem; font-weight:700; color:var(--text-white);">Viewing Scheduled!</h4>
-      <p style="font-size:0.95rem; margin-top:0.5rem; color: var(--text-muted);">
-        Our leasing agent will confirm your appointment shortly.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
+<!-- FOOTER SECTION -->
 <footer class="footer-section">
   <div class="container-custom">
     <div class="footer-grid">
-      <div>
-        <a href="#" class="logo-brand">
+      <div class="footer-brand">
+        <a routerLink="/" class="logo-brand">
           <div class="logo-icon">
             <i class="fa-solid fa-crown"></i>
           </div>
           <div class="logo-text-wrap">
-            <span class="logo-title">EMPIRE LIVING</span>
+            <span class="logo-title text-gold">EMPIRE LIVING</span>
             <span class="logo-subtitle">REAL ESTATE & MANAGEMENT</span>
           </div>
         </a>
-        <p class="footer-brand-desc">
-          South Africa’s premier luxury real estate advisory and property management firm. Setting the benchmark for luxury living, high-yield investments, and tenant satisfaction.
+        <p class="brand-desc">
+          South Africa’s leading property management & real estate advisory firm. Representing prestige residential and commercial portfolios across Sandton, Rosebank, and Midrand.
         </p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
       </div>
 
-      <div>
-        <h4 class="footer-heading">Navigation</h4>
-        <ul class="footer-links">
-          <li class="footer-link-item"><a href="#home">Home</a></li>
-          <li class="footer-link-item"><a href="#about">About Us</a></li>
-          <li class="footer-link-item"><a href="#services">Our Services</a></li>
-          <li class="footer-link-item"><a href="#properties">Properties to Rent</a></li>
-          <li class="footer-link-item"><a href="#pre-approval">Get Pre-Approved</a></li>
-          <li class="footer-link-item"><a href="#contact">Contact Us</a></li>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/services">Services</a></li>
+          <li><a routerLink="/properties">Properties to Rent</a></li>
+          <li><a routerLink="/pre-approval">Bond Pre-Approval</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
         </ul>
       </div>
 
-      <div>
-        <h4 class="footer-heading">Prime Locations</h4>
-        <ul class="footer-links">
-          <li class="footer-link-item"><a href="#properties">Sandton Central</a></li>
-          <li class="footer-link-item"><a href="#properties">Rosebank & Melrose Arch</a></li>
-          <li class="footer-link-item"><a href="#properties">Waterfall Country Estate</a></li>
-          <li class="footer-link-item"><a href="#properties">Houghton & Hyde Park</a></li>
+      <div class="footer-col">
+        <h4>Primary Hubs</h4>
+        <ul>
+          <li><a routerLink="/properties" [queryParams]="{location: 'Sandton'}">Sandton Central</a></li>
+          <li><a routerLink="/properties" [queryParams]="{location: 'Rosebank'}">Rosebank Gautrain Quarter</a></li>
+          <li><a routerLink="/properties" [queryParams]="{location: 'Waterfall'}">Waterfall Country Estate</a></li>
+          <li><a routerLink="/properties" [queryParams]="{location: 'Houghton'}">Houghton Ridge</a></li>
         </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Direct Advisory</h4>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+27 (0)11 884 9000</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info&#64;empireliving.co.za</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>The Sandton Towers, Sandton Central</span>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div>
-        &copy; 2026 Empire Living Property Management. All Rights Reserved.
-      </div>
-      <div class="social-links">
-        <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://wa.me/27820001122" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <p>&copy; 2026 Empire Living Real Estate & Property Management. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">POPIA Compliance</a>
       </div>
     </div>
   </div>

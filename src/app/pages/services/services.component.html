@@ -1,0 +1,48 @@
+<div class="services-page page-animate" id="services">
+  <!-- PAGE HERO HEADER -->
+  <section class="page-hero">
+    <div class="page-hero-watermark">SERVICES</div>
+    <div class="container-custom text-center page-hero-content">
+      <div class="gold-badge"><i class="fa-solid fa-crown"></i> Tailored Excellence</div>
+      <h1 class="page-title">Real Estate & Management Services</h1>
+      <p class="page-subtitle">From tenant placement and asset yield optimization to pre-approval financial advisory and full-scale property management.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES LISTING SECTION -->
+  <section class="section-padding services-grid-section">
+    <div class="container-custom">
+      <div class="services-grid">
+        <div class="service-card light-card" *ngFor="let srv of services">
+          <div class="service-icon"><i [class]="srv.icon"></i></div>
+          <h3 class="service-title">{{ srv.title }}</h3>
+          <p class="service-summary">{{ srv.summary }}</p>
+          <ul class="feature-bullets">
+            <li *ngFor="let f of srv.features">
+              <i class="fa-solid fa-circle-check"></i> {{ f }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION CTA BANNER -->
+  <section class="section-padding consultation-banner">
+    <div class="container-custom">
+      <div class="cta-card light-card text-center">
+        <div class="gold-badge"><i class="fa-solid fa-comments"></i> Bespoke Consultation</div>
+        <h2>Need A Customized Management Solution For Your Portfolio?</h2>
+        <p>Speak directly with our senior portfolio managers for a complimentary rental assessment and market valuation.</p>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="btn-gold">
+            Book Agent Consultation <i class="fa-solid fa-calendar-check"></i>
+          </a>
+          <a routerLink="/pre-approval" class="btn-outline-gold">
+            Get Pre-Approved <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,179 @@
+<div class="home-page page-animate">
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-backdrop"></div>
+    <div class="hero-watermark">EMPIRE LIVING</div>
+    <div class="container-custom hero-content">
+      <div class="gold-badge hero-badge">
+        <i class="fa-solid fa-crown"></i> Premier Luxury Real Estate
+      </div>
+      
+      <h1 class="hero-title">
+        Elevating Luxury Living & <br>
+        <span class="text-gold-gradient">Real Estate Excellence</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        South Africa’s premier property management and real estate advisory firm representing prestige tenants, buyers, and high-yield investors across Sandton, Rosebank, and Waterfall.
+      </p>
+
+      <!-- Quick Search Card -->
+      <div class="search-card light-card">
+        <div class="search-grid">
+          <div class="field-group">
+            <label class="field-label"><i class="fa-solid fa-location-dot"></i> Location</label>
+            <select class="select-control" [(ngModel)]="searchLocation">
+              <option value="All Locations">All Locations</option>
+              <option value="Sandton">Sandton Central</option>
+              <option value="Rosebank">Rosebank</option>
+              <option value="Waterfall">Waterfall Estate</option>
+              <option value="Houghton">Houghton Estate</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label"><i class="fa-solid fa-building"></i> Property Type</label>
+            <select class="select-control" [(ngModel)]="searchType">
+              <option value="All Types">All Types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Villa">Villa / Estate</option>
+              <option value="Penthouse">Sky Penthouse</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label"><i class="fa-solid fa-coins"></i> Monthly Rental Range</label>
+            <select class="select-control" [(ngModel)]="searchPriceRange">
+              <option value="All Prices">All Prices</option>
+              <option value="< R30k">Under R30,000 /pm</option>
+              <option value="R30k - R50k">R30,000 - R50,000 /pm</option>
+              <option value="> R50k">Over R50,000 /pm</option>
+            </select>
+          </div>
+
+          <button class="btn-gold" (click)="executeSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i> Search Properties
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar light-card">
+        <div class="stat-item">
+          <span class="stat-number">R2.5B+</span>
+          <span class="stat-label">Portfolio Value</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">1,200+</span>
+          <span class="stat-label">Luxury Units Managed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">99.4%</span>
+          <span class="stat-label">Occupancy Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">15+ Yrs</span>
+          <span class="stat-label">Market Authority</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROPERTIES PREVIEW -->
+  <section class="section-padding featured-section">
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="gold-badge">
+          <i class="fa-solid fa-gem"></i> Curated Residences
+        </div>
+        <h2 class="section-title">Exclusive Featured Properties</h2>
+        <p class="section-subtitle">Handpicked luxury residences available for corporate lease and high-yield investment.</p>
+      </div>
+
+      <div class="properties-grid">
+        <div class="property-card light-card" *ngFor="let prop of properties">
+          <div class="card-image-wrap">
+            <img [src]="prop.image" [alt]="prop.title" class="card-img">
+            <span class="card-badge">{{ prop.badge }}</span>
+            <div class="card-price">R{{ prop.price | number }} <small>/month</small></div>
+          </div>
+          <div class="card-body">
+            <div class="card-type">{{ prop.type }}</div>
+            <h3 class="card-title">{{ prop.title }}</h3>
+            <p class="card-location"><i class="fa-solid fa-location-dot"></i> {{ prop.location }}</p>
+            <p class="card-desc">{{ prop.description }}</p>
+            <div class="card-specs">
+              <span><i class="fa-solid fa-bed"></i> {{ prop.beds }} Beds</span>
+              <span><i class="fa-solid fa-bath"></i> {{ prop.baths }} Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> {{ prop.areaSqM }} m²</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center view-all-wrap">
+        <a routerLink="/properties" class="btn-navy">
+          Explore All Properties <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER SECTION -->
+  <section class="section-padding services-teaser-section">
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="gold-badge">
+          <i class="fa-solid fa-shield-halved"></i> What We Do
+        </div>
+        <h2 class="section-title">Comprehensive Real Estate Solutions</h2>
+        <p class="section-subtitle">Tailored advisory and management services designed for property owners, corporate clients, and tenants.</p>
+      </div>
+
+      <div class="teaser-grid">
+        <div class="teaser-card light-card">
+          <div class="teaser-icon"><i class="fa-solid fa-building-circle-check"></i></div>
+          <h3>Property Management</h3>
+          <p>End-to-end management ensuring maximum occupancy, tenant retention, and effortless rental yield optimization.</p>
+        </div>
+        <div class="teaser-card light-card">
+          <div class="teaser-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3>Vetted Tenant Placement</h3>
+          <p>Rigorously screened corporate and high-net-worth tenants with comprehensive financial background checks.</p>
+        </div>
+        <div class="teaser-card light-card">
+          <div class="teaser-icon"><i class="fa-solid fa-calculator"></i></div>
+          <h3>Pre-Approval Advisory</h3>
+          <p>Instant bond pre-qualification & financial structuring for buyers and property investors.</p>
+        </div>
+      </div>
+
+      <div class="text-center teaser-cta-wrap">
+        <a routerLink="/services" class="btn-outline-gold">
+          View Detailed Services <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-APPROVAL BANNER -->
+  <section class="preapp-banner-section">
+    <div class="container-custom">
+      <div class="preapp-banner-card light-card">
+        <div class="banner-text">
+          <div class="gold-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Instant Financial Planning</div>
+          <h2>Ready To Secure Your Dream Luxury Residence?</h2>
+          <p>Calculate your estimated monthly bond repayment and get pre-approved in under 2 minutes.</p>
+        </div>
+        <div class="banner-cta">
+          <a routerLink="/pre-approval" class="btn-gold">
+            Calculate & Pre-Approve <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

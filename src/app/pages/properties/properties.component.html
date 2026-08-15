@@ -1,0 +1,141 @@
+<div class="properties-page page-animate" id="properties">
+  <!-- PAGE HERO HEADER -->
+  <section class="page-hero">
+    <div class="page-hero-watermark">PROPERTIES</div>
+    <div class="container-custom text-center page-hero-content">
+      <div class="gold-badge"><i class="fa-solid fa-gem"></i> Portfolio Catalog</div>
+      <h1 class="page-title">Luxury Properties To Rent & Buy</h1>
+      <p class="page-subtitle">Browse our exclusive collection of penthouses, executive villas, and luxury apartments across Sandton and Rosebank.</p>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER CONTROLS -->
+  <section class="section-padding properties-catalog-section">
+    <div class="container-custom">
+      
+      <!-- Filter Bar -->
+      <div class="catalog-filter-card light-card">
+        <div class="filter-tabs">
+          <button class="tab-btn" [class.active]="activeCategory === 'All'" (click)="setCategory('All')">All Residences</button>
+          <button class="tab-btn" [class.active]="activeCategory === 'Apartment'" (click)="setCategory('Apartment')">Apartments</button>
+          <button class="tab-btn" [class.active]="activeCategory === 'Villa'" (click)="setCategory('Villa')">Executive Villas</button>
+          <button class="tab-btn" [class.active]="activeCategory === 'Penthouse'" (click)="setCategory('Penthouse')">Sky Penthouses</button>
+        </div>
+
+        <div class="filter-controls">
+          <div class="control-group">
+            <label>Location</label>
+            <select [(ngModel)]="searchLocation">
+              <option value="All Locations">All Locations</option>
+              <option value="Sandton">Sandton Central</option>
+              <option value="Rosebank">Rosebank</option>
+              <option value="Waterfall">Waterfall Estate</option>
+              <option value="Houghton">Houghton Estate</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>Type</label>
+            <select [(ngModel)]="searchType">
+              <option value="All Types">All Types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Villa">Villa</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>Monthly Price</label>
+            <select [(ngModel)]="searchPriceRange">
+              <option value="All Prices">All Prices</option>
+              <option value="< R30k">Under R30,000 /pm</option>
+              <option value="R30k - R50k">R30,000 - R50,000 /pm</option>
+              <option value="> R50k">Over R50,000 /pm</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property Grid -->
+      <div class="properties-grid" *ngIf="filteredProperties.length > 0">
+        <div class="property-card light-card" *ngFor="let prop of filteredProperties">
+          <div class="card-image-wrap">
+            <img [src]="prop.image" [alt]="prop.title" class="card-img">
+            <span class="card-badge">{{ prop.badge }}</span>
+            <div class="card-price">R{{ prop.price | number }} <small>/month</small></div>
+          </div>
+
+          <div class="card-body">
+            <span class="card-type">{{ prop.type }}</span>
+            <h3 class="card-title">{{ prop.title }}</h3>
+            <p class="card-location"><i class="fa-solid fa-location-dot"></i> {{ prop.location }}</p>
+            <p class="card-desc">{{ prop.description }}</p>
+
+            <div class="card-specs">
+              <span><i class="fa-solid fa-bed"></i> {{ prop.beds }} Beds</span>
+              <span><i class="fa-solid fa-bath"></i> {{ prop.baths }} Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> {{ prop.areaSqM }} m²</span>
+            </div>
+
+            <button class="btn-gold card-btn" (click)="openViewingModal(prop)">
+              Request Private Viewing <i class="fa-solid fa-calendar-days"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-results light-card text-center" *ngIf="filteredProperties.length === 0">
+        <i class="fa-solid fa-building-circle-xmark"></i>
+        <h3>No Residences Matched Your Filter Criteria</h3>
+        <p>Try broadening your search parameters or speak directly with an agent.</p>
+        <button class="btn-outline-gold" (click)="searchLocation='All Locations'; searchType='All Types'; searchPriceRange='All Prices'; activeCategory='All'">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIEWING REQUEST MODAL -->
+  <div class="modal-backdrop" *ngIf="selectedProperty" (click)="closeViewingModal()">
+    <div class="modal-card light-card" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeViewingModal()"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-header">
+        <span class="gold-badge"><i class="fa-solid fa-eye"></i> Schedule Viewing</span>
+        <h2>{{ selectedProperty.title }}</h2>
+        <p class="modal-loc"><i class="fa-solid fa-location-dot"></i> {{ selectedProperty.location }}</p>
+      </div>
+
+      <div *ngIf="!viewingForm.submitted">
+        <form (ngSubmit)="submitViewingForm()" class="modal-form">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" required [(ngModel)]="viewingForm.name" name="name" placeholder="John Doe" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" required [(ngModel)]="viewingForm.phone" name="phone" placeholder="+27 82 000 0000" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Preferred Viewing Date *</label>
+            <input type="date" required [(ngModel)]="viewingForm.date" name="date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Special Requirements / Notes</label>
+            <textarea [(ngModel)]="viewingForm.notes" name="notes" rows="3" placeholder="Preferred viewing time or requirements..." class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn-gold full-width">
+            Confirm Private Viewing <i class="fa-solid fa-check"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="modal-success text-center" *ngIf="viewingForm.submitted">
+        <i class="fa-solid fa-circle-check success-icon"></i>
+        <h3>Viewing Request Submitted!</h3>
+        <p>Our concierge agent will contact you shortly to confirm your private viewing.</p>
+      </div>
+    </div>
+  </div>
+</div>
