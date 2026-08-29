@@ -6,20 +6,17 @@
         <i class="fa-solid fa-crown"></i>
       </div>
       <div class="logo-text-wrap">
-        <span class="logo-title">EMPIRE LIVING</span>
-        <span class="logo-subtitle">REAL ESTATE & MANAGEMENT</span>
+        <span class="logo-title">EMPIRELIVING</span>
+        <span class="logo-subtitle">Property Management Companies</span>
       </div>
     </a>
 
     <!-- Desktop Navigation Links with Angular Router -->
     <nav class="nav-menu-desktop">
-      <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
-      <a routerLink="/about" routerLinkActive="active-nav-link" class="nav-link">About</a>
-      <a routerLink="/services" routerLinkActive="active-nav-link" class="nav-link">Services</a>
-      <a routerLink="/properties" routerLinkActive="active-nav-link" class="nav-link">Properties to Rent</a>
-      <a routerLink="/pre-approval" routerLinkActive="active-nav-link" class="nav-link">Get Pre-Approved</a>
-      <a routerLink="/contact" routerLinkActive="active-nav-link" class="nav-link">Contact Us</a>
-      <a routerLink="/pre-approval" class="btn-gold nav-cta">Pre-Approve Now</a>
+      <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}"
+        class="nav-link">HOME</a>
+      <a routerLink="/about" routerLinkActive="active-nav-link" class="nav-link">ABOUT</a>
+      <a routerLink="/services" routerLinkActive="active-nav-link" class="nav-link">SERVICES</a>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -30,13 +27,12 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" *ngIf="isMobileMenuOpen">
-    <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}" class="mobile-nav-link" (click)="closeMobileMenu()">Home</a>
-    <a routerLink="/about" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">About</a>
-    <a routerLink="/services" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Services</a>
-    <a routerLink="/properties" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Properties to Rent</a>
-    <a routerLink="/pre-approval" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Get Pre-Approved</a>
-    <a routerLink="/contact" routerLinkActive="active-nav-link" class="mobile-nav-link" (click)="closeMobileMenu()">Contact Us</a>
-    <a routerLink="/pre-approval" class="btn-gold mobile-btn" (click)="closeMobileMenu()">Pre-Approve Now</a>
+    <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}"
+      class="mobile-nav-link" (click)="closeMobileMenu()">Home</a>
+    <a routerLink="/about" routerLinkActive="active-nav-link" class="mobile-nav-link"
+      (click)="closeMobileMenu()">About</a>
+    <a routerLink="/services" routerLinkActive="active-nav-link" class="mobile-nav-link"
+      (click)="closeMobileMenu()">Services</a>
   </div>
 </header>
 
@@ -55,12 +51,13 @@
             <i class="fa-solid fa-crown"></i>
           </div>
           <div class="logo-text-wrap">
-            <span class="logo-title text-gold">EMPIRE LIVING</span>
-            <span class="logo-subtitle">REAL ESTATE & MANAGEMENT</span>
+            <span class="logo-title text-brand-light">EMPIRELIVING</span>
+            <span class="logo-subtitle">REAL ESTATE & ADVISORY SERVICES</span>
           </div>
         </a>
         <p class="brand-desc">
-          South Africa’s leading property management & real estate advisory firm. Representing prestige residential and commercial portfolios across Sandton, Rosebank, and Midrand.
+          South Africa’s premier property management & business advisory firm representing prestige residential and
+          commercial portfolios across Sandton, Rosebank, and Midrand.
         </p>
         <div class="social-links">
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -75,9 +72,6 @@
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/about">About Us</a></li>
           <li><a routerLink="/services">Services</a></li>
-          <li><a routerLink="/properties">Properties to Rent</a></li>
-          <li><a routerLink="/pre-approval">Bond Pre-Approval</a></li>
-          <li><a routerLink="/contact">Contact Us</a></li>
         </ul>
       </div>
 
@@ -109,7 +103,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Empire Living Real Estate & Property Management. All Rights Reserved.</p>
+      <p>&copy; 2026 EmpireLiving Real Estate & Advisory Services. All Rights Reserved.</p>
       <div class="legal-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -118,3 +112,9 @@
     </div>
   </div>
 </footer>
+
+<!-- FLOATING SCROLL TO TOP BUTTON -->
+<button class="scroll-to-top-btn" [class.show-scroll-btn]="showScrollTopBtn" (click)="scrollToTop()"
+  aria-label="Scroll to Top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>

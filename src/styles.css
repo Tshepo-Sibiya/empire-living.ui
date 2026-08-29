@@ -1,55 +1,70 @@
 /* Empire Living Global Styles - Luxury Light Theme & High-Visibility Animations */
 :root {
-  /* Light Luxury Theme Colors */
-  --bg-light-primary: #F8FAFC;
-  --bg-light-secondary: #FAFAFC;
-  --bg-light-card: #FFFFFF;
-  --bg-warm-ivory: #FDFBF7;
-  --bg-light-glass: rgba(255, 255, 255, 0.94);
-
-  /* Gold & Navy Accents */
+  /* Black, Gold & White Luxury Palette */
   --gold-primary: #B8860B;
   --gold-light: #D4AF37;
   --gold-bright: #E5C378;
   --gold-dark: #8B6508;
   --gold-subtle: rgba(184, 134, 11, 0.12);
-  --gold-gradient: linear-gradient(110deg, #9A7B39 0%, #B8860B 25%, #FFF3C4 50%, #D4AF37 75%, #9A7B39 100%);
-  --gold-gradient-hover: linear-gradient(110deg, #B8860B 0%, #E5BE47 30%, #FFFFFF 50%, #E5BE47 70%, #AA8B49 100%);
+  --gold-gradient: linear-gradient(135deg, #9A7B39 0%, #B8860B 50%, #D4AF37 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #B8860B 0%, #E5C378 100%);
 
-  --navy-primary: #0F172A;
-  --navy-secondary: #1E293B;
-  --navy-light: #334155;
+  --black-primary: #0B0F17;
+  --black-pure: #000000;
+  --black-card: #121824;
+  --black-surface: #1E2430;
 
-  --text-dark: #0F172A;
-  --text-body: #334155;
+  --primary-blue: #B8860B;
+  --primary-blue-hover: #D4AF37;
+  --navy-dark: #0B0F17;
+  --navy-primary: #0B0F17;
+  --navy-secondary: #121824;
+  --navy-light: #2D3748;
+
+  --text-dark: #0B0F17;
+  --text-body: #2D3748;
   --text-muted: #64748B;
   --text-white: #FFFFFF;
 
-  --border-gold: rgba(184, 134, 11, 0.28);
-  --border-gold-hover: rgba(184, 134, 11, 0.65);
+  --bg-page: #FDFBF7;
+  --bg-card: #FFFFFF;
+  --bg-light-blue: #F9F6F0;
+  --bg-light-primary: #FDFBF7;
+  --bg-light-secondary: #F9F6F0;
+  --bg-light-card: #FFFFFF;
+  --bg-header-glass: rgba(255, 255, 255, 0.96);
+  --bg-light-glass: rgba(255, 255, 255, 0.96);
+
+  --border-subtle: #E2E8F0;
+  --border-gold: rgba(184, 134, 11, 0.3);
+  --border-gold-hover: rgba(184, 134, 11, 0.75);
+  --border-blue: rgba(184, 134, 11, 0.3);
+  --border-blue-hover: rgba(184, 134, 11, 0.75);
   --border-light: #E2E8F0;
 
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.05);
-  --shadow-medium: 0 20px 40px rgba(15, 23, 42, 0.08);
-  --shadow-gold: 0 12px 30px rgba(184, 134, 11, 0.22);
+  --shadow-soft: 0 4px 15px rgba(11, 15, 23, 0.05);
+  --shadow-medium: 0 10px 25px rgba(11, 15, 23, 0.1);
+  --shadow-gold: 0 8px 25px rgba(184, 134, 11, 0.25);
+  --shadow-blue: 0 8px 25px rgba(184, 134, 11, 0.25);
 
-  /* Typography: Poppins (Headings) & Montserrat / Inter (Body) */
+  /* Typography: Poppins, Sans-serif */
   --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Montserrat', 'Inter', sans-serif;
+  --font-body: 'Poppins', sans-serif;
 
-  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-body);
-  background-color: var(--bg-light-primary);
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
   color: var(--text-dark);
 }
 
@@ -81,15 +96,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: var(--text-dark);
 }
 
-/* Dynamic Animated Gold Text Gradient */
+/* Dynamic Animated Metallic Gold Text Gradient */
 .text-gold-gradient {
   background: linear-gradient(
     110deg,
     #9A7B39 0%,
-    #B8860B 25%,
-    #FFF3C4 50%,
+    #B8860B 35%,
+    #E5C378 50%,
     #D4AF37 75%,
-    #9A7B39 100%
+    #8B6508 100%
   );
   background-size: 250% auto;
   -webkit-background-clip: text;
@@ -111,17 +126,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold-primary);
   animation: pulseGlow 3s infinite ease-in-out, badgeFloat 4s ease-in-out infinite;
 }
 
-/* Headline Entrance & Reveal Animations */
-.hero-title, .page-title, .section-title {
-  animation: headlineEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Headline Entrance & Slow Drop-Down Animations from Top */
+.hero-title, .hero-title-vantage, .page-title, .section-title {
+  animation: dropFromTopSlow 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-subtitle, .page-subtitle, .section-subtitle {
-  animation: subtitleFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hero-subtitle, .hero-subtitle-vantage, .page-subtitle, .section-subtitle {
+  animation: dropFromTopSlow 2.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
 }
 
 /* Section Layout */
@@ -147,16 +163,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Buttons */
 .btn-gold {
-  background: var(--gold-gradient);
-  background-size: 200% auto;
+  background: var(--black-primary);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.5px;
   padding: 0.95rem 2rem;
-  border-radius: 8px;
-  border: none;
+  border-radius: 6px;
+  border: 1.5px solid var(--gold-primary);
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
@@ -170,39 +185,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   overflow: hidden;
 }
 
-.btn-gold::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 70%
-  );
-  transform: rotate(30deg);
-  animation: shimmer 4s infinite;
-}
-
 .btn-gold:hover {
-  background-position: right center;
-  transform: translateY(-3px) scale(1.02);
+  background: var(--gold-primary);
+  border-color: var(--gold-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
   box-shadow: var(--shadow-gold);
 }
 
 .btn-navy {
-  background: var(--navy-primary);
+  background: var(--black-primary);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.5px;
   padding: 0.95rem 2rem;
-  border-radius: 8px;
-  border: none;
+  border-radius: 6px;
+  border: 1.5px solid var(--gold-primary);
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
@@ -210,38 +210,43 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   justify-content: center;
   gap: 0.75rem;
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.25);
 }
 
 .btn-navy:hover {
-  background: var(--navy-secondary);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: var(--shadow-medium);
+  background: var(--gold-primary);
+  border-color: var(--gold-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
 }
 
 .btn-outline-gold {
   background: transparent;
-  color: var(--gold-dark);
-  border: 1.5px solid var(--gold-primary);
+  color: var(--black-primary);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.5px;
   padding: 0.95rem 2rem;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1.5px solid var(--gold-primary);
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
 .btn-outline-gold:hover {
-  background: var(--gold-subtle);
-  border-color: var(--gold-dark);
-  color: var(--navy-primary);
-  transform: translateY(-3px) scale(1.02);
+  background: var(--gold-primary);
+  color: #FFFFFF;
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
 }
 
 /* Section Header */
@@ -272,6 +277,68 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   line-height: 1.7;
 }
 
+/* Vantage Section Tag Header Component */
+.vantage-tag-block {
+  margin-bottom: 2.5rem;
+}
+
+.vantage-tag-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.vantage-tag-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0B0F17;
+  color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(11, 15, 23, 0.2);
+  flex-shrink: 0;
+}
+
+.vantage-tag-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #0B0F17;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.vantage-tag-line {
+  flex-grow: 1;
+  height: 1px;
+  background: #E2E8F0;
+}
+
+.vantage-tag-subheadline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #0B0F17;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.vantage-tag-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 850px;
+}
+
 /* Light Elevated Cards */
 .light-card {
   background: var(--bg-light-card);
@@ -299,6 +366,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   }
   100% {
     background-position: 250% center;
+  }
+}
+
+@keyframes dropFromTopSlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -371,4 +449,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   50% {
     box-shadow: 0 0 0 10px rgba(184, 134, 11, 0);
   }
+}
+
+/* Hide Background Side Labels / Watermarks */
+.page-hero-watermark, .hero-watermark {
+  display: none !important;
 }

@@ -1,10 +1,9 @@
 <div class="services-page page-animate" id="services">
   <!-- PAGE HERO HEADER -->
   <section class="page-hero">
-    <div class="page-hero-watermark">SERVICES</div>
     <div class="container-custom text-center page-hero-content">
       <div class="gold-badge"><i class="fa-solid fa-crown"></i> Tailored Excellence</div>
-      <h1 class="page-title">Real Estate & Management Services</h1>
+      <h1 class="page-title">Services</h1>
       <p class="page-subtitle">From tenant placement and asset yield optimization to pre-approval financial advisory and full-scale property management.</p>
     </div>
   </section>
@@ -12,6 +11,16 @@
   <!-- SERVICES LISTING SECTION -->
   <section class="section-padding services-grid-section">
     <div class="container-custom">
+      <div class="vantage-tag-block">
+        <div class="vantage-tag-header">
+          <div class="vantage-tag-icon"><i class="fa-solid fa-list-check"></i></div>
+          <h2 class="vantage-tag-title">OUR SERVICES</h2>
+          <div class="vantage-tag-line"></div>
+        </div>
+        <h3 class="vantage-tag-subheadline">COMPREHENSIVE PROPERTY MANAGEMENT & ADVISORY SOLUTIONS</h3>
+        <p class="vantage-tag-desc">Discover our range of professional real estate services designed to deliver maximum portfolio value and peace of mind.</p>
+      </div>
+
       <div class="services-grid">
         <div class="service-card light-card" *ngFor="let srv of services">
           <div class="service-icon"><i [class]="srv.icon"></i></div>
@@ -34,6 +43,7 @@
         <div class="gold-badge"><i class="fa-solid fa-comments"></i> Bespoke Consultation</div>
         <h2>Need A Customized Management Solution For Your Portfolio?</h2>
         <p>Speak directly with our senior portfolio managers for a complimentary rental assessment and market valuation.</p>
+        <!--
         <div class="cta-actions">
           <a routerLink="/contact" class="btn-gold">
             Book Agent Consultation <i class="fa-solid fa-calendar-check"></i>
@@ -42,6 +52,7 @@
             Get Pre-Approved <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+        -->
       </div>
     </div>
   </section>

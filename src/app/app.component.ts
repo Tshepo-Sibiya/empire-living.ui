@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,6 +12,12 @@ import { RouterModule } from '@angular/router';
 export class AppComponent {
   title = 'empire-living-ui';
   isMobileMenuOpen = false;
+  showScrollTopBtn = false;
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.showScrollTopBtn = window.scrollY > 300;
+  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -19,5 +25,9 @@ export class AppComponent {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 export interface Property {
   id: string;
@@ -22,15 +21,11 @@ export interface Property {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  searchLocation = 'All Locations';
-  searchType = 'All Types';
-  searchPriceRange = 'All Prices';
-
   properties: Property[] = [
     {
       id: 'prop-1',
@@ -78,16 +73,4 @@ export class HomeComponent {
       description: 'Sophisticated open-plan living within walking distance of Rosebank Gautrain station, fine dining, and boutique retail.'
     }
   ];
-
-  constructor(private router: Router) {}
-
-  executeSearch() {
-    this.router.navigate(['/properties'], {
-      queryParams: {
-        location: this.searchLocation,
-        type: this.searchType,
-        price: this.searchPriceRange
-      }
-    });
-  }
 }

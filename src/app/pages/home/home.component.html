@@ -1,61 +1,28 @@
 <div class="home-page page-animate">
   <!-- HERO SECTION -->
   <section class="hero-section">
-    <div class="hero-backdrop"></div>
-    <div class="hero-watermark">EMPIRE LIVING</div>
+    <div class="hero-watermark-text">EMPIRELIVING</div>
     <div class="container-custom hero-content">
-      <div class="gold-badge hero-badge">
-        <i class="fa-solid fa-crown"></i> Premier Luxury Real Estate
-      </div>
-      
-      <h1 class="hero-title">
-        Elevating Luxury Living & <br>
-        <span class="text-gold-gradient">Real Estate Excellence</span>
+      <div class="gold-badge"><i class="fa-solid fa-crown"></i> Real Estate & Advisory Services</div>
+      <h1 class="hero-title-vantage">
+        Welcome To EmpireLiving.<br>
+        <span class="hero-title-sub">Your #1 Property Company</span>
       </h1>
 
-      <p class="hero-subtitle">
-        South Africa’s premier property management and real estate advisory firm representing prestige tenants, buyers, and high-yield investors across Sandton, Rosebank, and Waterfall.
-      </p>
-
-      <!-- Quick Search Card -->
-      <div class="search-card light-card">
-        <div class="search-grid">
-          <div class="field-group">
-            <label class="field-label"><i class="fa-solid fa-location-dot"></i> Location</label>
-            <select class="select-control" [(ngModel)]="searchLocation">
-              <option value="All Locations">All Locations</option>
-              <option value="Sandton">Sandton Central</option>
-              <option value="Rosebank">Rosebank</option>
-              <option value="Waterfall">Waterfall Estate</option>
-              <option value="Houghton">Houghton Estate</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label"><i class="fa-solid fa-building"></i> Property Type</label>
-            <select class="select-control" [(ngModel)]="searchType">
-              <option value="All Types">All Types</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Villa">Villa / Estate</option>
-              <option value="Penthouse">Sky Penthouse</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label"><i class="fa-solid fa-coins"></i> Monthly Rental Range</label>
-            <select class="select-control" [(ngModel)]="searchPriceRange">
-              <option value="All Prices">All Prices</option>
-              <option value="< R30k">Under R30,000 /pm</option>
-              <option value="R30k - R50k">R30,000 - R50,000 /pm</option>
-              <option value="> R50k">Over R50,000 /pm</option>
-            </select>
-          </div>
-
-          <button class="btn-gold" (click)="executeSearch()">
-            <i class="fa-solid fa-magnifying-glass"></i> Search Properties
-          </button>
-        </div>
+      <div class="hero-subtitle-vantage">
+        <p>We are an innovative company established in 2018. Since then, we’ve evolved into one of the city’s top
+          property management company. Our clients include individuals, families, corporations, and institutions. No
+          matter who you are, we seek to find the best properties to suit your needs. There are no shortcuts or
+          half-measures; excellence and service are our focus.</p>
       </div>
+
+      <!--
+      <div class="hero-cta-single">
+        <a routerLink="/services" class="btn-vantage-navy">
+          Learn more <i class="fa-solid fa-circle-arrow-right"></i>
+        </a>
+      </div>
+      -->
 
       <!-- Stats Bar -->
       <div class="stats-bar light-card">
@@ -82,15 +49,52 @@
     </div>
   </section>
 
+  <!-- ABOUT US SECTION (Vantage Style) -->
+  <section class="section-padding about-vantage-section">
+    <div class="container-custom">
+      <!-- Section Tag Header -->
+      <div class="vantage-tag-header">
+        <div class="vantage-tag-icon"><i class="fa-solid fa-gear"></i></div>
+        <span class="vantage-tag-title">ABOUT US</span>
+        <div class="vantage-tag-line"></div>
+      </div>
+
+      <div class="about-vantage-grid">
+        <!-- Left: Image-Masked Giant Text -->
+        <div class="about-masked-heading">
+          <div class="masked-word">EMPOWERING</div>
+          <div class="masked-word">GROWTH</div>
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="about-vantage-content">
+          <h3 class="about-subheadline">
+            EMPOWERING BUSINESS THROUGH INSIGHT, INNOVATION, AND IMPACT
+          </h3>
+          <p class="about-body-text">
+            <strong>EmpireLiving</strong> is one of the region's premier Property Management Companies. Our team of professional staff members represent both buyers and sellers, and truly understand the intricacies of every local market. From starter homes to large estates, we are ready for the assignment.
+          </p>
+          <p class="about-body-text">
+            We are a full-service experienced company building high-end luxury custom spaces. We have earned an enviable reputation for quality. We take great pride in this status and continue to earn recognition by paying particular attention to the details, utilizing the highest quality materials, and bringing together subcontractors of superior craftsmanship. We have planned, developed, and built dozens of homes.
+          </p>
+          <p class="about-body-text">
+            Our values are to uphold the highest standards of integrity, transparency, accountability, and trust at every step. Our goal is to always work in our client's interests to help them find a property that suits their needs, within their budget, and is positioned to bring them long-term value in the future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURED PROPERTIES PREVIEW -->
   <section class="section-padding featured-section">
     <div class="container-custom">
       <div class="section-header">
         <div class="gold-badge">
-          <i class="fa-solid fa-gem"></i> Curated Residences
+          <i class="fa-solid fa-building"></i> Curated Residences
         </div>
         <h2 class="section-title">Exclusive Featured Properties</h2>
-        <p class="section-subtitle">Handpicked luxury residences available for corporate lease and high-yield investment.</p>
+        <p class="section-subtitle">Handpicked luxury residences available for corporate lease and high-yield
+          investment.</p>
       </div>
 
       <div class="properties-grid">
@@ -113,12 +117,6 @@
           </div>
         </div>
       </div>
-
-      <div class="text-center view-all-wrap">
-        <a routerLink="/properties" class="btn-navy">
-          Explore All Properties <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -127,52 +125,78 @@
     <div class="container-custom">
       <div class="section-header">
         <div class="gold-badge">
-          <i class="fa-solid fa-shield-halved"></i> What We Do
+          <i class="fa-solid fa-briefcase"></i> Strategic Solutions
         </div>
         <h2 class="section-title">Comprehensive Real Estate Solutions</h2>
-        <p class="section-subtitle">Tailored advisory and management services designed for property owners, corporate clients, and tenants.</p>
+        <p class="section-subtitle">Tailored advisory and management services designed for property owners, corporate
+          clients, and investors.</p>
       </div>
 
       <div class="teaser-grid">
         <div class="teaser-card light-card">
           <div class="teaser-icon"><i class="fa-solid fa-building-circle-check"></i></div>
           <h3>Property Management</h3>
-          <p>End-to-end management ensuring maximum occupancy, tenant retention, and effortless rental yield optimization.</p>
+          <p>End-to-end management ensuring maximum occupancy, tenant retention, and effortless rental yield
+            optimization.</p>
         </div>
         <div class="teaser-card light-card">
           <div class="teaser-icon"><i class="fa-solid fa-user-shield"></i></div>
           <h3>Vetted Tenant Placement</h3>
-          <p>Rigorously screened corporate and high-net-worth tenants with comprehensive financial background checks.</p>
+          <p>Rigorously screened corporate and high-net-worth tenants with comprehensive financial background checks.
+          </p>
         </div>
         <div class="teaser-card light-card">
-          <div class="teaser-icon"><i class="fa-solid fa-calculator"></i></div>
-          <h3>Pre-Approval Advisory</h3>
-          <p>Instant bond pre-qualification & financial structuring for buyers and property investors.</p>
+          <div class="teaser-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3>Business & Portfolio Advisory</h3>
+          <p>Strategic financial structuring, asset performance analysis, and tailored corporate advisory.</p>
         </div>
       </div>
 
+      <!--
       <div class="text-center teaser-cta-wrap">
         <a routerLink="/services" class="btn-outline-gold">
           View Detailed Services <i class="fa-solid fa-chevron-right"></i>
         </a>
       </div>
+      -->
     </div>
   </section>
 
-  <!-- PRE-APPROVAL BANNER -->
-  <section class="preapp-banner-section">
+  <!-- GET IN TOUCH SECTION (Vantage Style from Screenshot) -->
+  <section class="section-padding contact-teaser-section">
     <div class="container-custom">
-      <div class="preapp-banner-card light-card">
-        <div class="banner-text">
-          <div class="gold-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Instant Financial Planning</div>
-          <h2>Ready To Secure Your Dream Luxury Residence?</h2>
-          <p>Calculate your estimated monthly bond repayment and get pre-approved in under 2 minutes.</p>
+      <div class="vantage-tag-block">
+        <div class="vantage-tag-header">
+          <div class="vantage-tag-icon"><i class="fa-solid fa-headset"></i></div>
+          <h2 class="vantage-tag-title">GET IN TOUCH</h2>
+          <div class="vantage-tag-line"></div>
         </div>
-        <div class="banner-cta">
-          <a routerLink="/pre-approval" class="btn-gold">
-            Calculate & Pre-Approve <i class="fa-solid fa-arrow-right"></i>
-          </a>
+        <h3 class="vantage-tag-subheadline">LET’S CONNECT – YOUR GROWTH STARTS HERE</h3>
+        <p class="vantage-tag-desc">Have questions or need expert guidance? Get in touch with us today and let’s explore how we can support your business success.</p>
+      </div>
+
+      <div class="contact-cta-bar light-card">
+        <div class="cta-contact-info">
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Call Our Advisory Team</strong>
+              <span>+27 (0) 11 892 4000</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <span>info&#64;empireliving.co.za</span>
+            </div>
+          </div>
         </div>
+        <!--
+        <a routerLink="/contact" class="btn-gold">
+          Contact Us Now <i class="fa-solid fa-paper-plane"></i>
+        </a>
+        -->
       </div>
     </div>
   </section>

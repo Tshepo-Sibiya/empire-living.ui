@@ -1,89 +1,112 @@
 <div class="about-page page-animate">
   <!-- PAGE HERO HEADER -->
   <section class="page-hero">
-    <div class="page-hero-watermark">ABOUT US</div>
     <div class="container-custom text-center page-hero-content">
       <div class="gold-badge"><i class="fa-solid fa-crown"></i> Our Heritage & Vision</div>
-      <h1 class="page-title">About Empire Living</h1>
-      <p class="page-subtitle">Redefining luxury real estate advisory and high-yield property management across South Africa's premier financial districts.</p>
+      <h1 class="page-title">About</h1>
+      <p class="page-subtitle">EmpireLiving is one of the region's premier Property Management Companies.</p>
     </div>
   </section>
 
-  <!-- STORY SECTION -->
-  <section class="section-padding story-section">
+  <!-- MAIN VANTAGE ADVISORY CONTENT SECTION -->
+  <section class="section-padding about-main-section">
     <div class="container-custom">
-      <div class="story-grid">
-        <div class="story-image-wrap light-card">
-          <img src="assets/images/hero_mansion.png" alt="Empire Estate" class="story-img">
-          <div class="experience-badge">
-            <span class="exp-num">15</span>
-            <span class="exp-text">Years Of Unmatched<br>Leadership</span>
-          </div>
-        </div>
-
-        <div class="story-content">
-          <div class="gold-badge"><i class="fa-solid fa-shield-halved"></i> Uncompromising Standard</div>
-          <h2 class="section-title">Bridging High-Yield Investors & Elite Corporate Tenants</h2>
-          <p class="paragraph">
-            Founded over 15 years ago in the heart of Sandton, <strong>Empire Living</strong> has grown to represent South Africa's most prestigious residential portfolios, sky penthouses, and private estates.
-          </p>
-          <p class="paragraph">
-            We bridge the gap between discerning property owners demanding maximized rental yields and blue-chip corporate executives requiring bespoke, move-in ready luxury residences.
-          </p>
-          <div class="features-list">
-            <div class="feature-item">
-              <i class="fa-solid fa-circle-check"></i>
-              <div>
-                <h4>Vetted Corporate Placements</h4>
-                <p>Comprehensive credit, employment, and diplomatic background verification.</p>
-              </div>
+      <div class="about-vantage-main-grid">
+        
+        <!-- LEFT COLUMN: Main Text & Checkmark Matrix -->
+        <div class="about-left-col">
+          <div class="vantage-tag-block">
+            <div class="vantage-tag-header">
+              <div class="vantage-tag-icon"><i class="fa-solid fa-circle-info"></i></div>
+              <h2 class="vantage-tag-title">ABOUT EMPIRELIVING</h2>
+              <div class="vantage-tag-line"></div>
             </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-circle-check"></i>
-              <div>
-                <h4>Bespoke Concierge & Maintenance</h4>
-                <p>24/7 dedicated property managers and rapid artisan response teams.</p>
-              </div>
-            </div>
+            <h3 class="vantage-tag-subheadline">STRATEGIC GUIDANCE FOR PROPERTY MANAGEMENT & REAL ESTATE GROWTH</h3>
+          </div>
+
+          <div class="vantage-text-body">
+            <p>
+              At <strong>EmpireLiving</strong>, we provide tailored property management and real estate advisory solutions to help property owners, corporate tenants, and investors navigate complex market dynamics, optimize portfolio yields, and drive sustainable growth. Our expertise spans property management, corporate leasing, asset yield optimization, and pre-approval financial guidance.
+            </p>
+            <p>
+              We work closely with our clients to deliver actionable insights, innovative strategies, and effective execution plans, ensuring measurable impact and long-term asset value.
+            </p>
+          </div>
+
+          <div class="vantage-divider-line"></div>
+
+          <div class="vantage-check-grid">
+            <div class="check-item"><i class="fa-solid fa-check"></i> Property & Tenant Management</div>
+            <div class="check-item"><i class="fa-solid fa-check"></i> Capital & Yield Optimization Support</div>
+            <div class="check-item"><i class="fa-solid fa-check"></i> Corporate Lease Advisory</div>
+            <div class="check-item"><i class="fa-solid fa-check"></i> Market Expansion & Asset Valuations</div>
+            <div class="check-item"><i class="fa-solid fa-check"></i> Due Diligence & Pre-Approval Guidance</div>
+            <div class="check-item"><i class="fa-solid fa-check"></i> Diplomatic & High-Yield Placements</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- STATS COUNTER BAR -->
-  <section class="section-padding stats-section">
-    <div class="container-custom">
-      <div class="stats-grid">
-        <div class="stat-card light-card" *ngFor="let s of stats">
-          <span class="stat-num text-gold-gradient">{{ s.number }}</span>
-          <span class="stat-lbl">{{ s.label }}</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP TEAM SECTION -->
-  <section class="section-padding team-section">
-    <div class="container-custom">
-      <div class="section-header">
-        <div class="gold-badge"><i class="fa-solid fa-user-tie"></i> Leadership</div>
-        <h2 class="section-title">Executive Leadership Team</h2>
-        <p class="section-subtitle">Our seasoned team of real estate strategists and portfolio managers.</p>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-card light-card" *ngFor="let exec of executives">
-          <div class="exec-img-wrap">
-            <img [src]="exec.image" [alt]="exec.name" class="exec-img">
-          </div>
-          <div class="exec-info">
-            <h3>{{ exec.name }}</h3>
-            <span class="exec-title">{{ exec.title }}</span>
-            <p class="exec-bio">{{ exec.bio }}</p>
+        <!-- RIGHT COLUMN: FEATURES SIDEBAR BOX -->
+        <div class="about-right-col">
+          <div class="vantage-features-box light-card">
+            <h3 class="features-box-title">FEATURES</h3>
+            
+            <ul class="features-box-list">
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <span>Strategic Property Growth</span>
+              </li>
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-award"></i></div>
+                <span>Customised Property & Leasing Strategies</span>
+              </li>
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                <span>Data-Driven Decision-Making</span>
+              </li>
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-coins"></i></div>
+                <span>Access to Capital & Yield Funding</span>
+              </li>
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>Risk & Compliance Advisory</span>
+              </li>
+              <li>
+                <div class="feat-icon"><i class="fa-solid fa-globe"></i></div>
+                <span>Market Expansion & Localisation</span>
+              </li>
+            </ul>
           </div>
         </div>
+
       </div>
+
+      <!-- BOTTOM SECTION TAG HEADER: OUR ADVISORY SOLUTIONS -->
+      <div class="vantage-tag-header section-spacer">
+        <div class="vantage-tag-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <span class="vantage-tag-title">OUR ADVISORY SOLUTIONS</span>
+        <div class="vantage-tag-line"></div>
+      </div>
+
+      <!-- 3 SOLUTIONS CARDS ROW -->
+      <div class="solutions-grid">
+        <div class="solution-card light-card">
+          <div class="sol-icon-wrap"><i class="fa-solid fa-handshake"></i></div>
+          <h3>OUR EXPERIENCE, YOUR ADVANTAGE</h3>
+          <p>Our staff come with deep industry experience in fields as varied as leveraged finance, institutional sales and property law.</p>
+        </div>
+        <div class="solution-card light-card">
+          <div class="sol-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>PROFESSIONAL & FRIENDLY STAFF</h3>
+          <p>Whether you are interested in purchasing or selling your first property or your tenth, we will be with you every step of the way.</p>
+        </div>
+        <div class="solution-card light-card">
+          <div class="sol-icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>BUY, SELL OR LEASE AWESOME PROPERTY</h3>
+          <p>Your home may be your most valuable asset, so why settle for less when it comes to your property management company?</p>
+        </div>
+      </div>
+
     </div>
   </section>
 </div>
