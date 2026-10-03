@@ -22,8 +22,8 @@
   --navy-light: #2D3748;
 
   --text-dark: #0B0F17;
-  --text-body: #2D3748;
-  --text-muted: #64748B;
+  --text-body: #0B0F17;
+  --text-muted: #B8860B;
   --text-white: #FFFFFF;
 
   --bg-page: #FDFBF7;
@@ -35,12 +35,12 @@
   --bg-header-glass: rgba(255, 255, 255, 0.96);
   --bg-light-glass: rgba(255, 255, 255, 0.96);
 
-  --border-subtle: #E2E8F0;
+  --border-subtle: rgba(184, 134, 11, 0.3);
   --border-gold: rgba(184, 134, 11, 0.3);
   --border-gold-hover: rgba(184, 134, 11, 0.75);
   --border-blue: rgba(184, 134, 11, 0.3);
   --border-blue-hover: rgba(184, 134, 11, 0.75);
-  --border-light: #E2E8F0;
+  --border-light: rgba(184, 134, 11, 0.3);
 
   --shadow-soft: 0 4px 15px rgba(11, 15, 23, 0.05);
   --shadow-medium: 0 10px 25px rgba(11, 15, 23, 0.1);
@@ -72,6 +72,15 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Global Link Reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }
 
 /* Custom Scrollbar */
@@ -142,18 +151,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Section Layout */
 .section-padding {
-  padding: 5rem 1.5rem;
+  padding: 3.5rem 1.25rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding: 7rem 4rem;
+    padding: 6rem 4rem;
   }
 }
 
 .container-custom {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
 }
 
 /* Page Container Animation */
@@ -316,7 +332,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vantage-tag-line {
   flex-grow: 1;
   height: 1px;
-  background: #E2E8F0;
+  background: rgba(184, 134, 11, 0.3);
 }
 
 .vantage-tag-subheadline {
@@ -333,7 +349,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vantage-tag-desc {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  color: #475569;
+  color: #0B0F17;
   line-height: 1.75;
   margin: 0;
   max-width: 850px;

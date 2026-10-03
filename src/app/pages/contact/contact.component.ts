@@ -23,20 +23,20 @@ export class ContactComponent {
     {
       city: 'Sandton HQ',
       address: 'Level 14, The Sandton Towers, 5th St, Sandton Central',
-      phone: '+27 11 884 9000',
-      email: 'sandton@empireliving.co.za'
+      phone: '+27 84 027 4454',
+      email: 'enquiries@empireliving.co.za'
     },
     {
       city: 'Rosebank Advisory Office',
       address: 'The Zone Phase 2, Oxford Rd, Rosebank',
-      phone: '+27 11 447 5500',
-      email: 'rosebank@empireliving.co.za'
+      phone: '+27 84 027 4454',
+      email: 'enquiries@empireliving.co.za'
     },
     {
       city: 'Waterfall Estate Hub',
       address: 'Waterfall City Corporate Campus, Midrand',
-      phone: '+27 10 590 1200',
-      email: 'waterfall@empireliving.co.za'
+      phone: '+27 84 027 4454',
+      email: 'enquiries@empireliving.co.za'
     }
   ];
 

@@ -17,6 +17,8 @@
         class="nav-link">HOME</a>
       <a routerLink="/about" routerLinkActive="active-nav-link" class="nav-link">ABOUT</a>
       <a routerLink="/services" routerLinkActive="active-nav-link" class="nav-link">SERVICES</a>
+      <a routerLink="/properties" routerLinkActive="active-nav-link" class="nav-link">PROPERTIES</a>
+      <a routerLink="/contact" routerLinkActive="active-nav-link" class="nav-link">CONTACT</a>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -28,11 +30,29 @@
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" *ngIf="isMobileMenuOpen">
     <a routerLink="/" routerLinkActive="active-nav-link" [routerLinkActiveOptions]="{exact: true}"
-      class="mobile-nav-link" (click)="closeMobileMenu()">Home</a>
+      class="mobile-nav-link" (click)="closeMobileMenu()">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
     <a routerLink="/about" routerLinkActive="active-nav-link" class="mobile-nav-link"
-      (click)="closeMobileMenu()">About</a>
+      (click)="closeMobileMenu()">
+      <i class="fa-solid fa-circle-info"></i> About Us
+    </a>
     <a routerLink="/services" routerLinkActive="active-nav-link" class="mobile-nav-link"
-      (click)="closeMobileMenu()">Services</a>
+      (click)="closeMobileMenu()">
+      <i class="fa-solid fa-briefcase"></i> Services
+    </a>
+    <a routerLink="/properties" routerLinkActive="active-nav-link" class="mobile-nav-link"
+      (click)="closeMobileMenu()">
+      <i class="fa-solid fa-building-user"></i> Properties
+    </a>
+    <a routerLink="/pre-approval" routerLinkActive="active-nav-link" class="mobile-nav-link"
+      (click)="closeMobileMenu()">
+      <i class="fa-solid fa-file-signature"></i> Pre-Approval
+    </a>
+    <a routerLink="/contact" routerLinkActive="active-nav-link" class="mobile-nav-link"
+      (click)="closeMobileMenu()">
+      <i class="fa-solid fa-envelope"></i> Contact Us
+    </a>
   </div>
 </header>
 
@@ -89,11 +109,11 @@
         <h4>Direct Advisory</h4>
         <div class="contact-item">
           <i class="fa-solid fa-phone"></i>
-          <span>+27 (0)11 884 9000</span>
+          <span>+27 84 027 4454</span>
         </div>
         <div class="contact-item">
           <i class="fa-solid fa-envelope"></i>
-          <span>info&#64;empireliving.co.za</span>
+          <span>enquiries&#64;empireliving.co.za</span>
         </div>
         <div class="contact-item">
           <i class="fa-solid fa-location-dot"></i>
@@ -103,6 +123,9 @@
     </div>
 
     <div class="footer-bottom">
+      <div class="developer-credit">
+        Developed by <a href="#" target="_blank" rel="noopener noreferrer" class="dev-link">Criterion Tech Studio (PTY) Ltd</a>
+      </div>
       <p>&copy; 2026 EmpireLiving Real Estate & Advisory Services. All Rights Reserved.</p>
       <div class="legal-links">
         <a href="#">Privacy Policy</a>
